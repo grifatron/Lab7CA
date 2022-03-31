@@ -1,4 +1,4 @@
-module Lab7CA (instruction, rs1, rs2, rd, imm);
+module InstDecoder (instruction, rs1, rs2, rd, imm);
 input[31:0] instruction;
 
 output wire[4:0] rs1, rs2, rd;
