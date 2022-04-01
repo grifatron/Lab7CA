@@ -1,29 +1,26 @@
 
-module PC(clk, rst, PC_in, PC_out);
+module ADDER (rst, PC_in_4, PC_out_4);
 
-input clk, rst;
-input [7:0] PC_in;
-output reg [7:0] PC_out;
+input rst;
+input [7:0] PC_in_4;
+output reg [7:0] PC_out_4;
 
-initial begin
-PC_out = 8'b0;
+/*initial begin
+
+PC_out_4 = 8'b0;
 end
-
-
-always @ (posedge clk or posedge rst) begin
+*/
+always @ (*) begin
 
 if (rst) begin
-PC_out = 8'b0;
+
+PC_out_4 <= 8'b0;
 end
 
-else begin
-
-PC_out = PC_in;
-
-
-end
- 
+else begin 
+PC_out_4 <= PC_in_4+8'd4;
 end
 
+end
 
 endmodule
